@@ -8,7 +8,7 @@ public class Main {
     int plcQuantity = 1100;
     int employeeQuantity = 1100;
 
-    final List<Plc> startedLane = new AssemblyLine(plcQuantity, employeeQuantity).start();
+    final List<Plc> startedLane = new SecondAssemblyLine().apply(plcQuantity, employeeQuantity);
 
     final long plcInRunMode = startedLane.stream()
         .map(Plc::getState)

@@ -1,44 +1,25 @@
 package com.krzychu.rockwell;
 
-import static java.lang.Math.min;
-
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class AssemblyLine {
+public abstract class AssemblyLine implements BiFunction<Integer, Integer, List<Plc>> {
 
-  private final int plcQuantity;
-  private final int employeeQuantity;
-
-  public AssemblyLine(final int plcQuantity, final int employeeQuantity) {
-    this.plcQuantity = plcQuantity;
-    this.employeeQuantity = employeeQuantity;
-  }
-
-  public List<Plc> start() {
+  @Override
+  public List<Plc> apply(final Integer plcQuantity, final Integer employeeQuantity) {
     return IntStream.rangeClosed(1, plcQuantity)
-        .mapToObj(this::createPlc)
+        .mapToObj(plcNumber -> createPlc(plcNumber, employeeQuantity))
         .collect(Collectors.toList());
   }
 
-  private Plc createPlc(final int plcNumber) {
+  private Plc createPlc(final int plcNumber, final int employeeQuantity) {
     final Plc plc = new Plc();
-    performInitialisation(plc, plcNumber);
+    performInitialisation(plc, plcNumber, employeeQuantity);
     return plc;
   }
 
-  private void performInitialisation(final Plc plc, final int plcNumber) {
-    final int maxEmployeeNumberTogglingPlc = min(plcNumber / 2, employeeQuantity);
-    for (int employeeNumber = 1; employeeNumber <= maxEmployeeNumberTogglingPlc; employeeNumber++) {
-      if (plcNumber % employeeNumber == 0) {
-        plc.toggleState();
-      }
-    }
-
-    if (plcNumber <= employeeQuantity) {
-      plc.toggleState();
-    }
-  }
+  protected abstract void performInitialisation(final Plc plc, final int plcNumber, final int employeeQuantity);
 
 }

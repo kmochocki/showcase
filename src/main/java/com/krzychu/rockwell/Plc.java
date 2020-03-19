@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Plc {
 
-  private State state;
+  private State state = State.PROGRAM;
 
   public Plc() {
   }
@@ -14,13 +14,7 @@ public class Plc {
   }
 
   public void toggleState() {
-    if (this.state == null) {
-      this.state = State.RUN;
-    } else if (this.state.equals(State.RUN)) {
-      this.state = State.PROGRAM;
-    } else {
-      this.state = State.RUN;
-    }
+    this.state = (State.RUN.equals(this.state)) ? State.PROGRAM : State.RUN;
   }
 
   @Override
