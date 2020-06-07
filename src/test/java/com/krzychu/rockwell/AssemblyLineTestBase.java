@@ -1,6 +1,5 @@
 package com.krzychu.rockwell;
 
-import static com.krzychu.rockwell.TestAssemblyLine.computeCorrectOutput;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
@@ -35,7 +34,7 @@ abstract class AssemblyLineTestBase {
 
   private void performAssertion(final int employeeQuantity, final int plcQuantity) {
     final List<Plc> result = getAssemblyLine().apply(plcQuantity, employeeQuantity);
-    final List<Plc> expected = computeCorrectOutput(plcQuantity, employeeQuantity);
+    final List<Plc> expected = new TestAssemblyLine().computeCorrectOutput(plcQuantity, employeeQuantity);
 
     assertThat(result).isEqualTo(expected);
   }

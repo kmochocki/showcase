@@ -6,10 +6,7 @@ import java.util.stream.Stream;
 
 public class TestAssemblyLine {
 
-  private TestAssemblyLine() {
-  }
-
-  public static List<Plc> computeCorrectOutput(final Integer plcQuantity, final Integer employeeQuantity) {
+  public List<Plc> computeCorrectOutput(final Integer plcQuantity, final Integer employeeQuantity) {
     final List<Plc> plcs = Stream.generate(Plc::new)
         .limit(plcQuantity)
         .collect(Collectors.toList());
@@ -19,7 +16,7 @@ public class TestAssemblyLine {
     return plcs;
   }
 
-  private static void performInitialisationProcedure(final List<Plc> plcs, final int employeeQuantity) {
+  private void performInitialisationProcedure(final List<Plc> plcs, final int employeeQuantity) {
     for (int employeeNumber = 1; employeeNumber <= employeeQuantity; employeeNumber++) {
       for (int plcNumber = 1; plcNumber <= plcs.size(); plcNumber++) {
         if (plcNumber % employeeNumber == 0) {
