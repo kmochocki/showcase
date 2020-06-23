@@ -1,4 +1,4 @@
-package com.krzychu.rockwell;
+package com.krzychu.showcase;
 
 class SecondAssemblyLineTest extends AssemblyLineTestBase {
 

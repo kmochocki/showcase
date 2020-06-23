@@ -1,4 +1,4 @@
-package com.krzychu.rockwell;
+package com.krzychu.showcase;
 
 import static java.lang.Math.min;
 
