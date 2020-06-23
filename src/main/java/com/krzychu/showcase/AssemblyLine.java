@@ -1,4 +1,4 @@
-package com.krzychu.rockwell;
+package com.krzychu.showcase;
 
 import java.util.List;
 import java.util.function.BiFunction;

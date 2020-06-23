@@ -1,9 +1,9 @@
-package com.krzychu.rockwell.benchmark;
+package com.krzychu.showcase.benchmark;
 
-import com.krzychu.rockwell.AssemblyLine;
-import com.krzychu.rockwell.FirstAssemblyLine;
-import com.krzychu.rockwell.SecondAssemblyLine;
-import com.krzychu.rockwell.TestAssemblyLine;
+import com.krzychu.showcase.AssemblyLine;
+import com.krzychu.showcase.FirstAssemblyLine;
+import com.krzychu.showcase.SecondAssemblyLine;
+import com.krzychu.showcase.TestAssemblyLine;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;

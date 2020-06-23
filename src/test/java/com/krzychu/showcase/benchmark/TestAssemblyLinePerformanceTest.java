@@ -1,4 +1,4 @@
-package com.krzychu.rockwell.benchmark;
+package com.krzychu.showcase.benchmark;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;

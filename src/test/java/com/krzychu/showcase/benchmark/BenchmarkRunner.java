@@ -1,4 +1,4 @@
-package com.krzychu.rockwell.benchmark;
+package com.krzychu.showcase.benchmark;
 
 public class BenchmarkRunner {
     public static void main(String[] args) throws Exception {
