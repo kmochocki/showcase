@@ -1,6 +1,5 @@
 package com.krzychu.showcase;
 
-import static com.krzychu.showcase.TestAssemblyLine.computeCorrectOutput;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
