@@ -64,10 +64,12 @@
                 <version>${pitest.version}</version>
                 <configuration>
                     <targetClasses>
-                        <param>com.krzychu.rockwell.*</param>
+                        <param>com.krzychu.showcase.AssemblyLine</param>
+                        <param>com.krzychu.showcase.FirstAssemblyLine</param>
+                        <param>com.krzychu.showcase.SecondAssemblyLine</param>
                     </targetClasses>
                     <targetTests>
-                        <param>com.krzychu.rockwell.*</param>
+                        <param>com.krzychu.showcase.*</param>
                     </targetTests>
                     <timeoutConstant>8000</timeoutConstant>
                 </configuration>
