@@ -3,6 +3,6 @@ package com.kmochocki.showcase.jenkins
 class TestApi {
 
     def getApi() {
-        return GitLabApi.oauth2Login("asdf", "asdf", "asdf");
+        return new GitLabApi("http://your.gitlab.server.com", "YOUR_PERSONAL_ACCESS_TOKEN");
     }
 }
