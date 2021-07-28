@@ -7,9 +7,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                script {}
-                echo 'Hello World'
-                def kokos = testApi.getApi()
+                script {
+                    echo 'Hello World'
+                    def kokos = testApi.getApi()
+                }
             }
         }
     }
