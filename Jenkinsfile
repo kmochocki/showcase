@@ -5,8 +5,9 @@ pipeline {
     agent any
 
     stages {
-        stage {
+        stage('Hello') {
             steps {
+                echo 'Hello World'
                 testApi.getApi()
             }
         }
